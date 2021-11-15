@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "79426298024",
+    "project_id": "mini-pro-mobile",
+    "storage_bucket": "mini-pro-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79426298024:android:986fb229359d331e13629d",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79426298024-vmad6sfb0efc3i3bcegntngpim12fgjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACP52AXLjVdd6pR6iUsOf9_p5by-U-evA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79426298024-vmad6sfb0efc3i3bcegntngpim12fgjo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
