@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "79426298024",
+    "firebase_url": "https://mini-pro-mobile-default-rtdb.firebaseio.com",
     "project_id": "mini-pro-mobile",
     "storage_bucket": "mini-pro-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:79426298024:android:986fb229359d331e13629d",
+        "mobilesdk_app_id": "1:79426298024:android:08fd3e63d2ef178a13629d",
         "android_client_info": {
           "package_name": "com.example.myapp"
         }
