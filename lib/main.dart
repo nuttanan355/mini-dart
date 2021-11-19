@@ -26,12 +26,9 @@ class SIndex extends StatelessWidget {
       home: ShowIndex(),
       routes: {
         'AddData': (context) => AddData(),
-        'ViewData': (context) => ViewData(),
+        'ViewData': (context) => ViewData(chLoin: null,),
         'EditData': (context) => EditData(id: key,),
-      //   // 'Image': (context) => PackageImage(),
-      //   // 'Video': (context) => PackageVideo(),
-      //   // 'Location': (context) => PackageLocation(),
-      //   //  'Store': (context) => Store(),
+  
       },
       theme: ThemeData(
         primaryColor: pdColor, 

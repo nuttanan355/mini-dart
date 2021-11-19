@@ -43,6 +43,28 @@ dependencies:
   firebase_auth: ^3.1.4
   firebase_database: ^8.0.1
 
+#  path_provider: ^2.0.5
+  path: ^1.8.0
+  http: ^0.13.3
+  flutter_link_previewer: ^2.6.0
+  flutter_chat_types: ^3.2.0
+  
+  simple_url_preview: ^3.0.1
+
+
+  link_preview_generator: ^1.2.0
+
+url_launcher: ^6.0.13
+
+  # any_link_preview: ^1.0.8
+  # video_player: ^2.2.3
+  # better_player: ^0.0.73
+  # better_video_player: ^1.2.6
+  # image_picker: ^0.8.4+1
+
+
+  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

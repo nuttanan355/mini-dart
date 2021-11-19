@@ -22,10 +22,11 @@ class _AddDataState extends State<AddData> {
 
   Future<void> createData() async {
     dbfirebase.push().set({
-      'Title': title,
+      // 'Title': title,
       'Channel': channel,
       'Link': link,
     }).then((value) {
+      Navigator.of(context).pop();
       print("Success");
     }).catchError((onError) {
       print(onError.code);
@@ -40,7 +41,7 @@ class _AddDataState extends State<AddData> {
         backgroundColor: sColor,
         appBar: AppBar(
           backgroundColor: pdColor,
-          title: Text('AddData'),
+          title: Text('Add Data'),
         ),
         body: Form(
           key: formKey,
@@ -48,7 +49,7 @@ class _AddDataState extends State<AddData> {
             child: Column(
               children: [
                 imgVdd(),
-                txtTitle(),
+                // txtTitle(),
                 txtChannel(),
                 txtLink(),
                 btnSubmit(),
@@ -63,33 +64,36 @@ class _AddDataState extends State<AddData> {
   Widget imgVdd() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Image.network(
-          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
-          width: 400,
-          height: 230,
-        ));
+        child:  Icon(FontAwesomeIcons.ghost,
+        size: 200,color: pdColor,),
+        // Image.network(
+        //   'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+        //   width: 400,
+        //   height: 230,
+        // )
+        );
   }
 
-  Widget txtTitle() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      child: TextField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          hintText: 'ชื่อเรื่อง',
-          fillColor: Colors.white,
-          filled: true,
-        ),
-        style: TextStyle(fontSize: 18),
-        onChanged: (value) {
-          title = value;
-          return;
-        },
-      ),
-    );
-  }
+  // Widget txtTitle() {
+  //   return Container(
+  //     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+  //     child: TextField(
+  //       decoration: InputDecoration(
+  //         border: OutlineInputBorder(
+  //           borderRadius: BorderRadius.circular(10),
+  //         ),
+  //         hintText: 'ชื่อเรื่อง',
+  //         fillColor: Colors.white,
+  //         filled: true,
+  //       ),
+  //       style: TextStyle(fontSize: 18),
+  //       onChanged: (value) {
+  //         title = value;
+  //         return;
+  //       },
+  //     ),
+  //   );
+  // }
 
   Widget txtChannel() {
     return Container(
@@ -147,7 +151,7 @@ class _AddDataState extends State<AddData> {
         onPressed: () {
           if (formKey.currentState!.validate()) {
             formKey.currentState!.save();
-            print(title);
+            // print(title);
             print(channel);
             print(link);
             createData();

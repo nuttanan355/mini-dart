@@ -7,8 +7,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myapp/graphic/color.dart';
 
 class EditData extends StatefulWidget {
-  final dynamic id, title, channel, link;
-  const EditData({required this.id, this.title, this.channel, this.link})
+  final dynamic id, channel, link;
+  const EditData({required this.id, this.channel, this.link})
       : super();
 
   @override
@@ -36,11 +36,12 @@ class _EditDataState extends State<EditData> {
       dbfirebase
           .child(widget.id)
           .update({
-            'Title': title,
+            // 'Title': title,
             'Channel': channel,
             'Link': link,
           })
-          .then((value) => print('Success'))
+          .then((value) {print('Success');
+          Navigator.of(context).pop();} )
           .catchError((onError) {
             print(onError.code);
             print(onError.message);
@@ -57,7 +58,7 @@ class _EditDataState extends State<EditData> {
         backgroundColor: sColor,
         appBar: AppBar(
           backgroundColor: pdColor,
-          title: Text('EditDate'),
+          title: Text('Edit Date'),
         ),
         body: Form(
           key: formKey,
@@ -65,7 +66,7 @@ class _EditDataState extends State<EditData> {
             child: Column(
               children: [
                 imgVdd(),
-                txtTitle(),
+                // txtTitle(),
                 txtChannel(),
                 txtLink(),
                 btnSubmit(),
@@ -80,32 +81,35 @@ class _EditDataState extends State<EditData> {
   Widget imgVdd() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Image.network(
-          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
-          width: 400,
-          height: 230,
-        ));
+        child:  Icon(FontAwesomeIcons.ghost,
+        size: 200,color: pdColor,),
+        // Image.network(
+        //   'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+        //   width: 400,
+        //   height: 230,
+        // )
+        );
   }
 
-  Widget txtTitle() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      child: TextFormField(
-          initialValue: widget.title,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            hintText: 'ชื่อเรื่อง',
-            fillColor: Colors.white,
-            filled: true,
-          ),
-          style: TextStyle(fontSize: 18),
-          onSaved: (value) {
-            title = value;
-          }),
-    );
-  }
+  // Widget txtTitle() {
+  //   return Container(
+  //     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+  //     child: TextFormField(
+  //         initialValue: widget.title,
+  //         decoration: InputDecoration(
+  //           border: OutlineInputBorder(
+  //             borderRadius: BorderRadius.circular(10),
+  //           ),
+  //           hintText: 'ชื่อเรื่อง',
+  //           fillColor: Colors.white,
+  //           filled: true,
+  //         ),
+  //         style: TextStyle(fontSize: 18),
+  //         onSaved: (value) {
+  //           title = value;
+  //         }),
+  //   );
+  // }
 
   Widget txtChannel() {
     return Container(
@@ -163,7 +167,7 @@ class _EditDataState extends State<EditData> {
           if (formKey.currentState!.validate()) {
             formKey.currentState!.save();
             print('EditData');
-            print(title);
+            // print(title);
             print(channel);
             print(link);
             updateData();
